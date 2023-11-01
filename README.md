@@ -38,7 +38,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/bookmark-landing-page-html-csssass-js-Qiyk_6vJE5](https://www.frontendmentor.io/solutions/bookmark-landing-page-html-csssass-js-Qiyk_6vJE5)
 - Live Site URL: [https://p4bloxx.github.io/Bookmark-landing-page/](https://p4bloxx.github.io/Bookmark-landing-page/)
 
 ## My process
