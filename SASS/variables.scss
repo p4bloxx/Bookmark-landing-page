@@ -1,0 +1,597 @@
+//Tipography
+$fs-10: 0.625rem;
+$fs-12: 0.75rem;
+$fs-13: 0.8125rem;
+$fs-14: 0.875rem;
+$fs-15: 0.9375rem;
+$fs-16: 1rem;
+$fs-18: 1.125rem;
+$fs-20: 1.25rem;
+$fs-24: 1.5rem;
+$fs-30: 1.875rem;
+$fs-32: 2rem;
+$fs-48: 3rem;
+
+$fw-reg: 400;
+$fw-mdm: 500;
+
+//Colors
+$white: rgba(255, 255, 255, 1);
+$very-light-gray: rgba(247, 247, 247, 1);
+$blue-brand: rgba(82, 103, 223, 1);
+$dark-blue: rgba(36, 42, 69, 1);
+$dark-blue-025: rgba(36, 42, 69, 0.25); 
+$dark-blue-05: rgba(36, 42, 69, 0.5); 
+$dark-blue-75: rgba(36, 42, 69, 0.75);
+$dark-blue-95: rgba(36, 42, 69, 0.95);
+$red: rgba(250, 89, 89, 1);
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd,a, button {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.1;
+  font-family: 'Rubik', sans-serif;
+  background-color: $white;
+  position: relative;
+}
+
+.body-active{
+  overflow: hidden;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+  border: none;
+  outline: none;
+  color: initial;
+  background: transparent;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+//Utilities
+.clr-red{
+  color: $red;
+}
+
+.clr-dark025{
+  color: $dark-blue-025;
+}
+
+.clr-dark05{
+  color: $dark-blue-05;
+}
+
+.clr-dark75{
+  color: $dark-blue-75;
+}
+
+.clr-dark{
+  color: $dark-blue;
+}
+
+.clr-white{
+  color: $white;
+}
+
+.bg-white{
+  background-color: $white;
+}
+
+.bg-dark{
+  background-color: $dark-blue;
+}
+
+.bg-blue-brand{
+  background-color: $blue-brand;
+}
+
+.d-block{
+  display: block;
+}
+
+.p-inline-32{
+  padding-inline: $fs-32;
+}
+
+.p-inline-48{
+  padding-inline: 3rem;
+}
+
+.txt-center{
+  text-align: center;
+}
+
+.b-radius5{
+  border-radius: 5px;
+}
+
+.b-radius15{
+  border-radius: $fs-15;
+}
+
+.flex-between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column
+}
+
+@mixin flex-row{
+  @include flex-column;
+  flex-direction: row;
+}
+
+.flex-row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//Blocks
+.button{
+  cursor: pointer;
+  color: $white;
+  background-color: $blue-brand;
+  border-radius: 5px;
+  font-size: $fs-14;
+  font-weight: $fw-mdm;
+  line-height: 200%;
+  letter-spacing: 0.25px;
+  transition: all 0.3s linear;
+  box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.20);
+  border: 2px solid transparent;
+  padding-block: $fs-10;
+  padding-inline: $fs-16;
+}
+
+.button[data-type="btn-primary"]:hover{
+  background-color: $white;
+  color: $blue-brand;
+  border-color: $blue-brand;
+}
+
+.button[data-type="btn-secondary"]{
+  background-color: $very-light-gray;
+  color: $dark-blue-75;
+}
+
+.button[data-type="btn-secondary"]:hover{
+  background-color: $white;
+  border-color: rgb(91, 96, 116);
+}
+
+.btn-red{
+  background-color: $red;
+  color: $white;
+}
+
+.btn-red:hover{
+  background-color: $white;
+  color: $red;
+  border-color: $red;
+}
+
+.btn-red[data-type="btn-red-header"]{
+  padding-inline: $fs-32;
+  font-size: $fs-13;
+  letter-spacing: 1.5px;
+  line-height: 17px;
+}
+
+
+@media screen and (max-width: 700px) {
+  #header-btn{
+    display: none;
+  }
+}
+
+.button[data-type="btn-nav"]{
+  background-color: transparent;
+  color: $white;
+  border: 2px solid $white;
+  box-shadow: none;
+  letter-spacing: 2.308px;
+  line-height: 85%;
+  width: 100%;
+  margin-block-start: $fs-24;
+  font-size: $fs-20;
+    @media screen and (min-width: 700px) {
+      display: none;
+    }
+}
+
+.tab-btn,
+.accordion-info-btn{
+  padding-inline: $fs-24;
+}
+
+.tab-list-btn{
+  padding-block: $fs-20;
+  align-self: stretch;
+  border-block: 1px solid rgba(73, 93, 207, 0.20);
+  position: relative;
+  transition: all 0.3s linear;
+  font-size: $fs-16;
+  color: $dark-blue-75;
+  letter-spacing: 0.533px;
+  line-height: 17px;
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 7.25rem;
+      height: 4px;
+      background-color: transparent;
+      margin-inline: auto;
+      transition: background-color 0.2s linear;
+    }
+
+    @media screen and (min-width: 700px) {
+      cursor: pointer;
+        &:hover{
+          color: $red;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+  .tab-list{
+    max-width: 45.625rem;
+    margin-inline: auto;
+    justify-content: space-between;
+    padding-inline: 2.5rem 4.375rem;
+    border-bottom: 1px solid rgba(73, 93, 207, 0.20);
+  }
+
+  .tab-list{
+      & > button:nth-child(2){
+        margin-inline: 5.625rem 7.5rem;
+      }
+  }
+
+  .tab-list-btn{
+    border-block: none;
+    padding-inline: 0;
+      &::after{
+        content: '';
+        left: -50%;
+        right: -50%;
+        width: 15.1875rem;
+      }
+  }
+}
+
+.tab-list-btn[aria-selected="true"]{
+  color: $dark-blue;
+}
+
+.tab-list-btn[aria-selected="true"]::after{
+  background-color: $red;
+}
+
+
+p{
+  color: $dark-blue-05;
+  font-weight: $fw-reg;
+  line-height: 166.667%;
+  font-size: $fs-15;
+    @media screen and (min-width: 700px) {
+      font-size: $fs-18;
+      line-height: 155.556%;
+    }
+}
+
+p[data-type="p-FAQ"]{
+  line-height: 200%;
+  letter-spacing: 0.141px;
+  @media screen and (min-width: 700px) {
+    font-size: $fs-16;
+    line-height: 225%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  p:not(.accordion-content p){
+    width: 45ch;
+    margin-inline: auto;
+  }
+}
+
+@media screen and (min-width: 900px) { 
+  p:not(.accordion-content p){
+    width: 65ch;
+  }
+}
+
+@media screen and (min-width: 1200px) { 
+  p:not(.accordion-content p){
+    width: 50ch;
+  }
+}
+
+.contact-section p{
+  letter-spacing: 4.615px;
+  line-height: 40px;
+  font-size: $fs-12;
+  @media screen and (min-width: 1200px) { 
+    letter-spacing: 5px;
+  }
+}
+
+h1,h2,h3,h4{
+  color: $dark-blue;
+}
+
+h1{
+  line-height: 133.333%;
+  font-size: $fs-30;
+  letter-spacing: -0.094px; 
+    @media screen and (min-width: 700px) {
+      font-size: $fs-48;
+      line-height: 108.333%;
+      letter-spacing: -0.15px; 
+    }
+}
+
+h2{
+  font-size: $fs-24;
+  line-height: 52px;
+  letter-spacing: -0.075px;
+    @media screen and (min-width: 700px) {
+      font-size: $fs-32;
+      letter-spacing: -0.1px; 
+    } 
+}
+
+.contact-section h2{
+  letter-spacing: -0.075px;
+  line-height: 28px;
+  @media screen and (min-width: 1200px) {
+    line-height: 40px;
+  } 
+}
+
+h3{
+  font-size: $fs-15;
+  font-weight: $fw-reg;
+  line-height: 32px;
+    @media screen and (min-width: 700px) {
+      font-size: $fs-18;
+    }
+}
+
+h4{
+  font-size: $fs-20;
+  letter-spacing: 0.25px; 
+}
+
+.blue-shape{
+  height: 203px;
+}
+
+.blue-shape[data-type="shape-hero"]{
+  position: absolute;
+  top: 12.3125rem;
+  right: 0;
+  z-index: -1;
+  @media screen and (min-width: 700px) {
+      top: calc(12.3125rem + 5vh);
+  }
+
+  @media screen and (min-width: 900px) {
+    top: calc(12.3125rem + 10vh);
+  }
+
+  @media screen and (min-width: 1200px) {
+    top: calc(12.3125rem + 15vh);
+    height: 352px;
+  }
+}
+
+.blue-shape[data-type="blue-shape-rot"]{
+  position: absolute;
+  bottom: 15rem;
+  left: 0;
+  z-index: -1;
+  transform: rotate(180deg);
+  @media screen and (min-width: 1200px) {
+    bottom: 0;
+    height: 352px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .blue-shape{
+    height: 270px;
+  }
+}
+
+.nav ul{
+  @include flex-column;
+  text-align: center;
+  color: $white;
+  font-weight: $fw-reg;
+}
+
+.nav[data-type="nav"] ul li{
+  padding-block: $fs-24;
+  width: 100%;
+  border-block: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media screen and (min-width: 700px) {
+  .nav ul{
+    @include flex-row;
+  }
+
+  .nav[data-type="nav"] ul{
+    color: $dark-blue;
+    gap: 2.75rem;
+    font-size: $fs-15;
+  }
+}
+
+.nav[data-type="secondary-nav"] ul{
+  gap: $fs-32;
+  letter-spacing: 1.731px;
+  font-size: $fs-15;
+}
+
+
+@media screen and (min-width: 1200px) {
+  .nav[data-type="nav"] ul,
+  .nav[data-type="secondary-nav"] ul{
+    font-size: $fs-13;
+  }
+
+  .nav[data-type="nav"] ul{
+    margin-inline: 31.375rem 2.75rem;
+  }
+
+  .nav[data-type="nav"] ul li{
+    padding-block: 0;
+  }
+
+  .nav ul li{
+    cursor: pointer;
+    transition: color 0.3s linear;
+      &:hover{
+        color: $red;
+      }
+  }
+}
+
+
+@media screen and (min-width: 700px) {
+  .box-social[data-type="box-social-nav"],
+  button[data-type="btn-nav"],
+  img[data-type="open-btn"],
+  img[data-type="close-btn"],
+  img[data-type="logo-white"]{
+    display: none;
+  }
+}
+
+.card-container{
+  @include flex-column;
+  gap: 2.5rem;
+    @media screen and (min-width: 700px) {
+     @include flex-row;
+     flex-wrap: wrap;
+    }
+
+    @media screen and (min-width: 900px) {
+      @include flex-row;
+      flex-wrap:nowrap;
+      height: 28.1875rem;
+
+      & > .card:nth-child(1){
+        align-self: start;
+       }
+  
+       & > .card:nth-child(3){
+        align-self: end;
+       }
+     }
+}
+
+.card{
+  padding: 3.125rem $fs-24 $fs-24 $fs-24;
+  @include flex-column;
+  width: 17.5rem;
+  height: 23.1875rem;
+  box-shadow: 0px 10px 20px -5px rgba(73, 93, 207, 0.20);
+  border-radius: $fs-15;
+  background: url('../ASSETS/IMAGES/bg-dots.svg') no-repeat center 75%;
+    & > div{
+      margin-block: $fs-32 3.75rem;
+    }
+}
+
+.accordion-panel{
+  border-block-end: 1px solid rgba(36, 42, 69, 0.1477);
+}
+
+.accordion-content{
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms, margin-block-end 500ms;
+}
+
+.accordion-content[aria-hidden="false"]{
+  grid-template-rows: 1fr;
+  margin-block-end: $fs-24;
+}
