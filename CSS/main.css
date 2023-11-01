@@ -207,6 +207,17 @@ textarea:not([rows]) {
   line-height: 17px;
 }
 
+.btn-red[data-type=btn-red-contact] {
+  width: 100%;
+  pointer-events: none;
+}
+@media screen and (min-width: 1200px) {
+  .btn-red[data-type=btn-red-contact] {
+    width: 126px;
+    align-self: start;
+  }
+}
+
 @media screen and (max-width: 700px) {
   #header-btn {
     display: none;
@@ -909,7 +920,7 @@ main .FAQ-section .accordion-info-btn {
   right: 1rem;
   bottom: 2rem;
   opacity: 0;
-  transition: all 0.3s linear;
+  transition: all 0.1s linear;
   z-index: 5;
 }
 .contact-section .input-box .err {
@@ -932,11 +943,28 @@ main .FAQ-section .accordion-info-btn {
 }
 .contact-section .input-box .icon-active {
   opacity: 1;
-  bottom: 3.5rem;
 }
-.contact-section button {
-  width: 100%;
-  pointer-events: none;
+@media screen and (min-width: 1200px) {
+  .contact-section .input-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-direction: row;
+    gap: 1rem;
+    margin-block-start: 2.25rem;
+  }
+  .contact-section .input-box input[data-type=input-email] {
+    margin-block: 0;
+    max-width: 300px;
+  }
+  .contact-section .input-box .icon-err {
+    right: 35%;
+    bottom: 2.5rem;
+  }
+  .contact-section .input-box .err {
+    bottom: 7px;
+  }
 }
 
 footer {

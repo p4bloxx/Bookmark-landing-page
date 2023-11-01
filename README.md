@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://p4bloxx.github.io/Bookmark-landing-page/](https://p4bloxx.github.io/Bookmark-landing-page/)
 
 ## My process
 
@@ -56,9 +56,9 @@ Users should be able to:
 
 ### What I learned
 
-hi everyone ;) in this challenge I faced some excellent challenges regarding the layout of the various sections and the management of the various svg images such as that of the **hero-section**, but above all the **Tab-sections** helped me train list and **FAQ-section** in which I had to both arrange the individual components as best as possible and execute adequate **JS** code.
+hello everyone ;) in this challenge I faced some excellent challenges regarding the management of the layout of the various sections and the management of the various images in SVG format such as that of the **hero-section**; But above all, both the **Tab-sections** and the **FAQ section** helped me manage a slightly more complex layout and match the appropriate **JS** code.
 
-This time too I tried to use the CSS compilation technique called **CUBE CSS** to try to keep the code as clean as possible and avoid repetitions; however, I don't think I did it as best as I could....I can improve
+This time too I tried to use the CSS compilation technique called **CUBE CSS** to try to keep the code as clean as possible and avoid repetitions; However, I don't think I did it to the best of my ability...
 
 ### Continued development
 

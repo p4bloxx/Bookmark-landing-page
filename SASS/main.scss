@@ -289,6 +289,7 @@ main{
 
     .input-box{
       position: relative;
+      
 
       input[data-type="input-email"]{
         margin-block: $fs-32 $fs-16;
@@ -308,7 +309,7 @@ main{
         right: $fs-16;
         bottom: 2rem;
         opacity: 0;
-        transition: all 0.3s linear;
+        transition: all 0.1s linear;
         z-index: 5;
       }
 
@@ -335,13 +336,28 @@ main{
       
       .icon-active{
         opacity: 1;
-        bottom:3.5rem;
+      }
+
+      @media screen and (min-width: 1200px) {
+       @include flex-row;
+
+        gap: $fs-16;
+        margin-block-start: 2.25rem;
+          input[data-type="input-email"]{
+            margin-block: 0;
+            max-width: 300px;
+          }
+
+          .icon-err{
+            right: 35%;
+            bottom: 2.5rem;
+          }
+
+          .err{
+            bottom: 7px;
+          }
       }
       
-    }
-    button{
-      width: 100%;
-      pointer-events: none;
     }
 }
 
